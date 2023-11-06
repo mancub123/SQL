@@ -52,7 +52,7 @@ avg(quantity*price)
 FROM BIT_DB.FebSales Feb
 LEFT JOIN BIT_DB.customers cust
 
-#8 List all the products sold in Los Angeles in February, and include how many of each were sold.
+#8. List all the products sold in Los Angeles in February, and include how many of each were sold.
 SELECT DISTINCT product, SUM(quantity) AS sold
 FROM BIT_DB.FebSales
 WHERE length(orderid) = 6
