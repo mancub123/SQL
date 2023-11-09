@@ -86,4 +86,10 @@ ON FB.orderid = c.order_id
 WHERE orderid <> 'Order ID'
 AND orderid <> '';
 
-
+#12. What was the average quantity of products purchased per account in February? 
+SELECT sum(quantity)/count(c.acctnum)
+FROM BIT_DB.FebSales AS FB
+LEFT JOIN BIT_DB.customers AS c
+ON FB.orderid = c.order_id
+WHERE orderid <> 'Order ID'
+AND orderid <> '';
