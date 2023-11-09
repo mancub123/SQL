@@ -71,5 +71,19 @@ AND location LIKE '%NY%'
 GROUP BY location
 HAVING COUNT(orderid)>2
 
+#10. How many of each type of headphone was sold in February?
+SELECT sum(Quantity) as quantity,
+Product
+FROM BIT_DB.FebSales 
+WHERE Product like '%Headphones%'
+GROUP BY Product
+
+#11. What was the average amount spent per account in February?
+SELECT AVG(quantity*price)
+FROM BIT_DB.FebSales AS FB
+LEFT JOIN BIT_DB.customers AS c
+ON FB.orderid = c.order_id
+WHERE orderid <> 'Order ID'
+AND orderid <> '';
 
 
